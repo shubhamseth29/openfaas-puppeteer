@@ -1,0 +1,10 @@
+const piePortlet = require('./pie-portlet');
+const timeSeriesPortlet = require('./time-series-portlet');
+const mapPortlet = require('./map-portlet');
+const expandableTablePortlet = require('./expandable-table-portlet');
+const portlets = {};
+portlets['piev2'] = piePortlet;
+portlets['timeseriesv2'] = timeSeriesPortlet;
+portlets['regionalv2'] = mapPortlet;
+portlets['expandabletable'] = expandableTablePortlet;
+module.exports = portlets;
