@@ -1,0 +1,19 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://localhost:31112
+functions:
+  pdf-generator:
+    lang: puppeteer-node12
+    handler: ./pdf-generator
+    image: localhost:5000/pdf-generator:latest
+    read_timeout: 300s  # default is 5s, Maximum time to read HTTP request
+    write_timeout: 300s  # default is 5s, Maximum time to write HTTP response
+    upstream_timeout: 300s # Maximum duration of upstream function call
+    exec_timeout: 300s
+    environment:
+      read_timeout: 300s  # default is 5s, Maximum time to read HTTP request
+      write_timeout: 300s  # default is 5s, Maximum time to write HTTP response
+      upstream_timeout: 300s # Maximum duration of upstream function call
+      exec_timeout: 300s
+

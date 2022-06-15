@@ -28,6 +28,9 @@ RUN apt-get update && \
     apt-get install -y openjdk-11-jdk && \
     apt-get install -y ant && \
     apt-get clean;
+
+RUN npm i puppeteer@5.3.0
+
     
 # # Fix certificate issues
 # RUN apt-get update && \

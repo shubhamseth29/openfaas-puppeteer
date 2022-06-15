@@ -18,12 +18,21 @@ const timeSeriesPortlet = {
                     </div>
                 </div>
             </div>
+            <div class="time-series-container">
+                <div class="time-series-content">
+                    <div class="stacked-bar-chart-div" id="stacked-bar-chartdiv">
+                    </div>
+                    <div class="time-series-legendwrapper">
+                        <div id="stackedBar-legenddiv" class="stackedBar-legendDivLine"></div>
+                    </div>
+                </div>
+            </div>
             <div class="time-series-table-container">
             </div>
             <div class="extra-message">
                 No Data Available
             </div>
-            
+
     `,
     styles: `
             @page {
@@ -79,8 +88,17 @@ const timeSeriesPortlet = {
                 padding-top: 20px;
                 margin: 0 auto;
             }
+            .stacked-bar-chart-div{
+              width: 80%;
+              height: 400px;
+              padding-top: 20px;
+              margin: 0 auto;
+            }
             .time-series-legendDivLine {
                 width: 80%;
+            }
+            .stackedBar-legendDivLine{
+                width: 80%
             }
             .time-series-legendwrapper {
                 width: 100%;
@@ -95,13 +113,14 @@ const timeSeriesPortlet = {
                 margin: 20px 50px 0 50px;
                 page-break-after: always;
             }
-           
+
     `,
-    script: (data) => {
+    script: (data, timeout) => {
         return `
             (async () => {
                 let showGraph;
-                let chart;
+                let lineChart;
+                let stackChart;
                 let categoryAxis;
                 let valueAxis;
                 let seriesList;
@@ -110,34 +129,42 @@ const timeSeriesPortlet = {
                 let data = ${JSON.stringify(data)};
 
                 if (data['checkDescription'] && data['checkDescription']['description']) {
-                    $('.description-container').css({'display': 'block'});
+                    $('.description-container').css({display: 'block'});
                     $('.description-content').html(data['checkDescription']['description']);
                     $('.time-series-container').css({'margin-top': '0'});
                     $('.extra-message').css({'margin-top': '20px'});
                 }
                 const dateRange = '(' + data['startDate'] + ' - ' + data['endDate'] + ')';
-                $('.time-series-title').attr('id',data['cloud'] + data['module'] + data['page'] + data['insight'] + 'insightText');   
-                $('.time-series-chart-div').attr('id',data['cloud'] + data['module'] + data['page'] + data['insight']);   
-                $('.time-series-table-container').attr('id',data['cloud'] + data['module'] + data['page'] + data['insight'] + 'table');   
-                $('.time-series-legendDivLine').attr('id', data['cloud'] + data['module'] + data['page'] + data['insight'] + 'legenddiv');   
+                $('.time-series-title').attr('id', data['cloud'] + data['module'] + data['page'] + data['insight'] + 'insightText');
+                $('.time-series-chart-div').attr('id', data['cloud'] + data['module'] + data['page'] + data['insight']);
+                $('.stacked-bar-chart-div').attr('id', data['cloud'] + data['module'] + data['page'] + data['insight'] + 'stackedbarchart');
+                $('.time-series-table-container').attr('id', data['cloud'] + data['module'] + data['page'] + data['insight'] + 'table');
+                $('.time-series-legendDivLine').attr('id', data['cloud'] + data['module'] + data['page'] + data['insight'] + 'legenddiv');
+                $('.stackedBar-legendDivLine').attr('id', data['cloud'] + data['module'] + data['page'] + data['insight'] + 'stackedbarlegenddiv');
+
+
+                const calcHeight = (chart) => {
+                    let chartLegendHeight = chart.legend.contentHeight;
+                    if (chartLegendHeight >= 680 && chartLegendHeight <= 750) {
+                        if (chartLegendHeight > 734) {
+                            chartLegendHeight = 734;
+                        }
+                    } else {
+                        chartLegendHeight += 40;
+                    }
+                    return chartLegendHeight;
+                };
 
                 // am4core.useTheme(am4themes_dark);
                 // am4core.useTheme(am4themes_animated);
-
-                $('#' + data['cloud'] + data['module'] + data['page'] + data['insight'] + 'insightText').html(data['insightText']);
-
-                if (Object.keys(data['dataMap']).length === 0) {
-                    $('.extra-message').css({'display': 'block'});
-                    $('.time-series-container').css({'display': 'none'});
-                    $('.time-series-table-container').css({'display': 'none'});
-                    return;
-                } else if (data['dataMap'][data['dataMap']['graphKeyToBeUsed']].length > 64 || data['dataMap']['keys'].length > 70) {
-                    $('.time-series-container').css({'display': 'none'});
-                    showGraph = false;
-                } else {
-                    showGraph = true;           
+                let createGraph = (graphType) => {
                     // Create chart instance
-                    chart = am4core.create(data['cloud'] + data['module'] + data['page'] + data['insight'], am4charts.XYChart);
+                    let chart = null;
+                    if (graphType === 'lineSeries') {
+                        chart = am4core.create(data['cloud'] + data['module'] + data['page'] + data['insight'], am4charts.XYChart);
+                    } else if (graphType === 'stackedBar') {
+                        chart = am4core.create(data['cloud'] + data['module'] + data['page'] + data['insight'] + 'stackedbarchart', am4charts.XYChart);
+                    }
 
                     chart.data = data['dataMap'][data['dataMap']['graphKeyToBeUsed']];
                     chart.dateFormatter.dateFormat = 'JJ:NN, DD MMMM';
@@ -166,30 +193,51 @@ const timeSeriesPortlet = {
                     valueAxis.title.fontWeight = 'bold';
                     valueAxis.renderer.labels.template.fontSize = 13;
 
+                    if (graphType === 'stackedBar') {
+                        data['dataMap']['keys'] = data['dataMap']['keys'].filter((item) => {
+                            return item !== 'Total';
+                        });
+                    }
+
                     seriesList = [];
                     data['dataMap']['keys'].forEach((val, index) => {
-                    series = chart.series.push(new am4charts.LineSeries());
-                    series.dataFields.valueY = val;
-                    series.dataFields.categoryX = 'Date';
-                    series.name = val;
-                    series.tooltip.getFillFromObject = false;
-                    series.tooltip.getStrokeFromObject = true;
-                    series.tooltip.background.fill = am4core.color('white');
-                    series.tooltip.autoTextColor = false;
-                    series.tooltip.label.fill = am4core.color('black');
-                    series.tooltip.label.fontSize = 11;
-                    series.strokeWidth = 1.5;
-                    bullet = series.bullets.push(new am4charts.CircleBullet());
-                    bullet.circle.stroke = am4core.color('#fff');
-                    bullet.circle.strokeWidth = 1;
-                    bullet.circle.radius = 3;
-                    series.bullets.getIndex(0).tooltipText = '{name}:[b]{valueY}';
-                    series.legendSettings.itemValueText = '{valueY}';
-                    seriesList.push(series);
-                    });
+                        if (graphType === 'lineSeries') {
+                            series = chart.series.push(new am4charts.LineSeries());
+                        }
 
+                        if (graphType === 'stackedBar') {
+                            series = chart.series.push(new am4charts.ColumnSeries());
+                        }
+                        series.dataFields.valueY = val;
+                        series.dataFields.categoryX = 'Date';
+                        series.name = val;
+                        series.tooltip.getFillFromObject = false;
+                        series.tooltip.getStrokeFromObject = true;
+                        series.tooltip.background.fill = am4core.color('white');
+                        series.tooltip.autoTextColor = false;
+                        series.tooltip.label.fill = am4core.color('black');
+                        series.tooltip.label.fontSize = 11;
+                        if (graphType === 'stackedBar') {
+                            series.stacked = true;
+                            series.columns.template.tooltipText = '{name}:[b]{valueY}';
+                        }
+                        if (graphType === 'lineSeries') {
+                            series.strokeWidth = 1.5;
+                            bullet = series.bullets.push(new am4charts.CircleBullet());
+                            bullet.circle.stroke = am4core.color('#fff');
+                            bullet.circle.strokeWidth = 1;
+                            bullet.circle.radius = 3;
+                            series.bullets.getIndex(0).tooltipText = '{name}:[b]{valueY}';
+                        }
+                        series.legendSettings.itemValueText = '{valueY}';
+                        seriesList.push(series);
+                    });
                     chart.legend = new am4charts.Legend();
-                    legendContainer = am4core.create(data['cloud'] + data['module'] + data['page'] + data['insight'] + 'legenddiv', am4core.Container);
+                    if (graphType === 'stackedBar') {
+                        legendContainer = am4core.create(data['cloud'] + data['module'] + data['page'] + data['insight'] + 'stackedbarlegenddiv', am4core.Container);
+                    } else if (graphType === 'lineSeries') {
+                        legendContainer = am4core.create(data['cloud'] + data['module'] + data['page'] + data['insight'] + 'legenddiv', am4core.Container);
+                    }
                     legendContainer.width = am4core.percent(100);
                     //legendContainer.height = am4core.percent(100);
                     chart.legend.parent = legendContainer;
@@ -201,7 +249,11 @@ const timeSeriesPortlet = {
                     chart.events.on('maxsizechanged', resizeLegend);
                     function resizeLegend(ev) {
                         setTimeout(() => {
-                            document.getElementById(data['cloud'] + data['module'] + data['page'] + data['insight'] + 'legenddiv').style.height = chart.legend.contentHeight + 40 + 'px';
+                            if (graphType === 'stackedBar') {
+                                document.getElementById(data['cloud'] + data['module'] + data['page'] + data['insight'] + 'stackedbarlegenddiv').style.height = calcHeight(chart) + 'px';
+                            } else {
+                                document.getElementById(data['cloud'] + data['module'] + data['page'] + data['insight'] + 'legenddiv').style.height = calcHeight(chart) + 'px';
+                            }
                         }, 10);
                     }
 
@@ -214,39 +266,59 @@ const timeSeriesPortlet = {
                     marker.cornerRadius(12, 12, 12, 12);
                     marker.radius = 5.5;
                     marker.stroke = am4core.color('#ccc');
+                    return chart;
+                };
+
+                $('#' + data['cloud'] + data['module'] + data['page'] + data['insight'] + 'insightText').html(data['insightText']);
+
+                if (Object.keys(data['dataMap']).length === 0) {
+                    $('.extra-message').css({display: 'block'});
+                    $('.time-series-container').css({display: 'none'});
+                    $('.time-series-table-container').css({display: 'none'});
+                    return;
+                } else if (data['dataMap'][data['dataMap']['graphKeyToBeUsed']].length > 64 || data['dataMap']['keys'].length > 70) {
+                    $('.time-series-container').css({display: 'none'});
+                    showGraph = false;
+                } else {
+                    showGraph = true;
+                    lineChart = createGraph('lineSeries');
+                    stackChart = createGraph('stackedBar');
                 }
                 setTimeout(() => {
                     if (showGraph) {
-                        document.getElementById(data['cloud'] + data['module'] + data['page'] + data['insight'] + 'legenddiv').style.height = chart.legend.contentHeight + 40 + 'px';
+                        if (stackChart) {
+                            document.getElementById(data['cloud'] + data['module'] + data['page'] + data['insight'] + 'stackedbarlegenddiv').style.height = calcHeight(stackChart) + 'px';
+                        }
+                        if (lineChart) {
+                            document.getElementById(data['cloud'] + data['module'] + data['page'] + data['insight'] + 'legenddiv').style.height = calcHeight(lineChart) + 'px';
+                        }
                     }
-                   
+
                     let htmlForTable = '<table>';
                     htmlForTable += '<thead><tr>';
-                    data['dataMap']['tableKeys'].forEach(key => {
+                    data['dataMap']['tableKeys'].forEach((key) => {
                         htmlForTable += '<th>' + key + '</th>';
                     });
                     htmlForTable += '</tr></thead>';
-                    htmlForTable += '<tbody>'
-                    for (let i = 0, length = data['dataMap']['table'].length; i < length; ++i) {                     
+                    htmlForTable += '<tbody>';
+                    for (let i = 0, length = data['dataMap']['table'].length; i < length; ++i) {
                         htmlForTable += '<tr>';
-                        data['dataMap']['tableKeys'].forEach(key => {
+                        data['dataMap']['tableKeys'].forEach((key) => {
                             if (key in data['dataMap']['table'][i]) {
                                 htmlForTable += '<td>' + data['dataMap']['table'][i][key] + '</td>';
                             } else {
                                 htmlForTable += '<td>' + '-' + '</td>';
-                            }         
+                            }
                         });
                         htmlForTable += '</tr>';
-
-                        
                     }
                     htmlForTable += '</tbody>';
                     htmlForTable += '</table>';
                     $('#' + data['cloud'] + data['module'] + data['page'] + data['insight'] + 'table').html(htmlForTable);
-                }, 3000);
-            })();
+                }, ${timeout - 1000});
+              })();
         `;
-    }
+    },
 };
 
 module.exports = timeSeriesPortlet;

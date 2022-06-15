@@ -20,6 +20,8 @@ const axios = require("axios");
 
 const dummyData = require("./input.js");
 
+const getTimeOutForPortletType = require("./timeoutConfig");
+
 let footerTemplate;
 
 let pdfFiles;
@@ -197,6 +199,11 @@ module.exports = async (event, callback) => {
 
         const jsScripts = header.scriptsToImport;
 
+        const pageLoadTimeout = getTimeOutForPortletType(
+          insightData['portletType'].toLowerCase(),
+          insightData['data']
+      );
+
         let invocationType = insightData["data"]["invocationType"]
           ? insightData["data"]["invocationType"]
           : "auth";
@@ -250,7 +257,8 @@ module.exports = async (event, callback) => {
 
         insightsScripts.push(
           portlet[insightData["portletType"].toLowerCase()]["script"](
-            insightData["data"]
+            insightData["data"],
+            pageLoadTimeout
           )
         );
 
@@ -292,7 +300,7 @@ module.exports = async (event, callback) => {
             },
           },
 
-          3000
+          pageLoadTimeout
         );
       }
     }
@@ -360,20 +368,6 @@ const mergeMultiplePDF = (pdfFiles, fileName) => {
   });
 };
 
-// const mergeMultiplePDF = async (pdfFiles, fileName) => {
-//   return new Promise((resolve, reject) => {
-//     console.log('Merging started');
-//     merge(pdfFiles, fileName, (err) => {
-
-//       if (err) {
-//         console.log(err);
-//         reject(err);
-//       }
-//       resolve('Success: final Pdf ' + fileName);
-//     });
-//   });
-// };
-
 const importJsScripts = async (scripts, page) => {
   for (let i = 0; i < scripts.length; i++) {
     await page.addScriptTag({ url: scripts[i] });
@@ -439,7 +433,7 @@ const createPdf = async (
 
   console.log("Waiting For Page To Render.................");
 
-  // await page.waitForTimeout(waitingTime);
+  await page.waitForTimeout(waitingTime);
 
   // Generating PDF
 

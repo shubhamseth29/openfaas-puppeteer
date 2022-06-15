@@ -1,2152 +1,933 @@
 let dummyData = {
-  region: "ap-northeast-1",
-
-  bucketName: "centilytics-ap-northeast-1-dpshubhamtest",
-
-  reportKey: "hello.pdf",
-
-  reportName: "asd",
-
-  endDate: "09 August 2019",
-
-  customerEmail: "shubham26@gmail.com",
-
-  customerId: "centilytics_dev_root",
-
-  modules: {
-    cloudvisibility: {
-      insights: [
+  "reportName": "reportName",
+  "customerId": "centilytics_india_root",
+  "customerEmail": "stagingphase2@centilytics.com",
+  "modules": {
+    "aws/costmonitoring": {
+      "insights": [
         {
-          data: {
-            next: {},
-
-            previous: {},
-
-            generalException: [],
-
-            module: "cloudvisibility",
-
-            insufficientPermission: [],
-
-            invalidCredentials: [],
-
-            referS3UrlBydefault: false,
-
-            cloud: "aws",
-
-            resourceTags: [],
-
-            insight: "cost-by-region",
-
-            noCredentialsDB: [],
-
-            dataMap: {
-              output: [
-                {
-                  regionCost: 0.71,
-
-                  color: "#FFD700",
-
-                  selectable: true,
-
-                  latitude: 28.21729,
-
-                  title: "EU (Stockholm) $0.71",
-
-                  region: "EU (Stockholm)",
-
-                  longitude: "-152.929688",
-                },
-
-                {
-                  regionCost: 0.55,
-
-                  color: "#3CB371",
-
-                  latitude: "37.532600",
-
-                  selectable: true,
-
-                  title: "Seoul $0.55",
-
-                  region: "Asia Pacific (Seoul)",
-
-                  technicalName: "ap-northeast-2",
-
-                  longitude: "127.024612",
-                },
-
-                {
-                  regionCost: 0.43,
-
-                  color: "#808000",
-
-                  latitude: "29.2985",
-
-                  selectable: true,
-
-                  title: "Middle East $0.43",
-
-                  region: "Middle East",
-
-                  longitude: "42.5510",
-                },
-
-                {
-                  regionCost: 0.37,
-
-                  color: "#FFA500",
-
-                  latitude: "60.1453591",
-
-                  selectable: true,
-
-                  title: "Canada (Central) $0.37",
-
-                  region: "Canada (Central)",
-
-                  technicalName: "ca-central-1",
-
-                  longitude: "-110.6503695",
-                },
-
-                {
-                  regionCost: 0.17,
-
-                  color: "#DA70D6",
-
-                  selectable: true,
-
-                  latitude: 18.21729,
-
-                  title: "Middle East (Bahrain) $0.17",
-
-                  region: "Middle East (Bahrain)",
-
-                  longitude: "-152.929688",
-                },
-
-                {
-                  regionCost: 0,
-
-                  color: "#CD853F",
-
-                  selectable: true,
-
-                  latitude: 8.217289999999998,
-
-                  title: "Asia Pacific (Hong Kong) $0.0",
-
-                  region: "Asia Pacific (Hong Kong)",
-
-                  longitude: "-152.929688",
-                },
-              ],
-
-              pdfTable: {
-                "South America": [
-                  {
-                    "Cost($)": 5.66,
-
-                    "Service Name": "Amazon CloudFront",
-                  },
-
-                  {
-                    "Cost($)": 5.66,
-
-                    "Service Name": "Total",
-                  },
+          "data": {
+            "dataMap": {
+              "pie": {
+                "x": [
+                  "Cost($)"
                 ],
-
-                Miscellaneous: [
-                  {
-                    "Cost($)": 103219.88,
-
-                    "Service Name": "Total",
-                  },
-
-                  {
-                    "Cost($)": 87491.81,
-
-                    "Service Name": "Amazon Elastic Compute Cloud",
-                  },
-
-                  {
-                    "Cost($)": 7143.67,
-
-                    "Service Name": "Amazon Relational Database Service",
-                  },
-
-                  {
-                    "Cost($)": 3869.3,
-
-                    "Service Name": "Amazon CloudFront",
-                  },
-
-                  {
-                    "Cost($)": 771.9,
-
-                    "Service Name": "Amazon ElastiCache",
-                  },
-
-                  {
-                    "Cost($)": 653.24,
-
-                    "Service Name": "Amazon EC2 Container Service",
-                  },
-
-                  {
-                    "Cost($)": 531.33,
-
-                    "Service Name": "Amazon Elasticsearch Service",
-                  },
-
-                  {
-                    "Cost($)": 299.14,
-
-                    "Service Name": "AWS Data Transfer",
-                  },
-
-                  {
-                    "Cost($)": 274.68,
-
-                    "Service Name": "Amazon Virtual Private Cloud",
-                  },
-
-                  {
-                    "Cost($)": 267.87,
-
-                    "Service Name": "AmazonCloudWatch",
-                  },
-
-                  {
-                    "Cost($)": 260.83,
-
-                    "Service Name": "Amazon DynamoDB",
-                  },
-
-                  {
-                    "Cost($)": 221.16,
-
-                    "Service Name": "AWS Support (Business)",
-                  },
-
-                  {
-                    "Cost($)": 203.67,
-
-                    "Service Name": "Oracle Enterprise Linux 7.2",
-                  },
-
-                  {
-                    "Cost($)": 183.6,
-
-                    "Service Name":
-                      "CloudGuard IaaS NGFW with Threat Prevention - Previous Version",
-                  },
-
-                  {
-                    "Cost($)": 181.8,
-
-                    "Service Name": "AWS Support (Developer)",
-                  },
-
-                  {
-                    "Cost($)": 180.44,
-
-                    "Service Name": "Amazon Simple Storage Service",
-                  },
-
-                  {
-                    "Cost($)": 174.96,
-
-                    "Service Name":
-                      "Fortinet FortiGate Next-Generation Firewall",
-                  },
-
-                  {
-                    "Cost($)": 72.17,
-
-                    "Service Name": "Amazon Route 53",
-                  },
-
-                  {
-                    "Cost($)": 52.87,
-
-                    "Service Name": "Amazon Simple Email Service",
-                  },
-
-                  {
-                    "Cost($)": 47.56,
-
-                    "Service Name":
-                      "F5 Rules for AWS WAF - Web exploits OWASP Rules",
-                  },
-
-                  {
-                    "Cost($)": 46.85,
-
-                    "Service Name": "AWS WAF",
-                  },
-
-                  {
-                    "Cost($)": 43.2,
-
-                    "Service Name":
-                      "OpenVPN Access Server (25 Connected Devices)",
-                  },
-
-                  {
-                    "Cost($)": 40.72,
-
-                    "Service Name": "Amazon Elastic MapReduce",
-                  },
-
-                  {
-                    "Cost($)": 34.57,
-
-                    "Service Name":
-                      "Amazon Elastic Container Service for Kubernetes",
-                  },
-
-                  {
-                    "Cost($)": 25.25,
-
-                    "Service Name": "AWS CloudTrail",
-                  },
-
-                  {
-                    "Cost($)": 21.38,
-
-                    "Service Name": "Amazon Managed Streaming for Kafka (MSK)",
-                  },
-
-                  {
-                    "Cost($)": 17,
-
-                    "Service Name": "AWS Elemental MediaLive",
-                  },
-
-                  {
-                    "Cost($)": 14.84,
-
-                    "Service Name": "AWS Config",
-                  },
-
-                  {
-                    "Cost($)": 13.73,
-
-                    "Service Name": "AWS Global Accelerator",
-                  },
-
-                  {
-                    "Cost($)": 12.02,
-
-                    "Service Name": "Amazon Kinesis",
-                  },
-
-                  {
-                    "Cost($)": 11.61,
-
-                    "Service Name": "Amazon EC2 Container Registry (ECR)",
-                  },
-
-                  {
-                    "Cost($)": 10.83,
-
-                    "Service Name": "AWS Lambda",
-                  },
-
-                  {
-                    "Cost($)": 9.74,
-
-                    "Service Name": "Amazon Simple Queue Service",
-                  },
-
-                  {
-                    "Cost($)": 7.38,
-
-                    "Service Name": "Amazon Elastic File System",
-                  },
-
-                  {
-                    "Cost($)": 6.11,
-
-                    "Service Name": "Amazon Kinesis Firehose",
-                  },
-
-                  {
-                    "Cost($)": 5.17,
-
-                    "Service Name": "Amazon WorkSpaces",
-                  },
-
-                  {
-                    "Cost($)": 4.7,
-
-                    "Service Name": "AWS Budgets",
-                  },
-
-                  {
-                    "Cost($)": 3.9,
-
-                    "Service Name": "Amazon Comprehend",
-                  },
-
-                  {
-                    "Cost($)": 2.81,
-
-                    "Service Name": "Amazon API Gateway",
-                  },
-
-                  {
-                    "Cost($)": 2.54,
-
-                    "Service Name": "Amazon Transcribe",
-                  },
-
-                  {
-                    "Cost($)": 1.05,
-
-                    "Service Name": "AWS Key Management Service",
-                  },
-
-                  {
-                    "Cost($)": 0.9,
-
-                    "Service Name": "AWS Service Catalog",
-                  },
-
-                  {
-                    "Cost($)": 0.84,
-
-                    "Service Name": "Amazon SageMaker",
-                  },
-
-                  {
-                    "Cost($)": 0.48,
-
-                    "Service Name": "Amazon Simple Notification Service",
-                  },
-
-                  {
-                    "Cost($)": 0.08,
-
-                    "Service Name": "Amazon Elastic Transcoder",
-                  },
-
-                  {
-                    "Cost($)": 0.08,
-
-                    "Service Name": "AWS Elemental MediaConvert",
-                  },
-
-                  {
-                    "Cost($)": 0.07,
-
-                    "Service Name": "AWS Secrets Manager",
-                  },
-
-                  {
-                    "Cost($)": 0.01,
-
-                    "Service Name": "AWS Direct Connect",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS CloudHSM",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Athena",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS IoT",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Glacier",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Lightsail",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name":
-                      "Amazon DocumentDB (with MongoDB compatibility)",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS Systems Manager",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS X-Ray",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Inspector",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS Data Pipeline",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Neptune",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon AppStream",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon GuardDuty",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Redshift",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS DataSync",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Lex",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon WorkDocs",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS Elemental MediaPackage",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon CloudSearch",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS Elemental MediaStore",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon QuickSight",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS Directory Service",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Polly",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS Glue",
-                  },
-                ],
-
-                "United States": [
-                  {
-                    "Cost($)": 72.12,
-
-                    "Service Name": "Total",
-                  },
-
-                  {
-                    "Cost($)": 72.12,
-
-                    "Service Name": "Amazon CloudFront",
-                  },
-                ],
-
-                "US East (Ohio)": [
-                  {
-                    "Cost($)": 4720.11,
-
-                    "Service Name": "Total",
-                  },
-
-                  {
-                    "Cost($)": 3975.69,
-
-                    "Service Name": "Amazon Elastic Compute Cloud",
-                  },
-
-                  {
-                    "Cost($)": 262.87,
-
-                    "Service Name": "Amazon Elastic File System",
-                  },
-
-                  {
-                    "Cost($)": 221.43,
-
-                    "Service Name": "Amazon Relational Database Service",
-                  },
-
-                  {
-                    "Cost($)": 93.04,
-
-                    "Service Name": "AmazonCloudWatch",
-                  },
-
-                  {
-                    "Cost($)": 54,
-
-                    "Service Name": "Amazon Virtual Private Cloud",
-                  },
-
-                  {
-                    "Cost($)": 51.41,
-
-                    "Service Name": "Amazon ElastiCache",
-                  },
-
-                  {
-                    "Cost($)": 22.69,
-
-                    "Service Name": "AWS Lambda",
-                  },
-
-                  {
-                    "Cost($)": 9.72,
-
-                    "Service Name": "Amazon Kinesis",
-                  },
-
-                  {
-                    "Cost($)": 7.45,
-
-                    "Service Name": "Amazon Elasticsearch Service",
-                  },
-
-                  {
-                    "Cost($)": 6.34,
-
-                    "Service Name": "AWS CloudTrail",
-                  },
-
-                  {
-                    "Cost($)": 6.2,
-
-                    "Service Name": "Amazon Simple Storage Service",
-                  },
-
-                  {
-                    "Cost($)": 2.91,
-
-                    "Service Name": "AWS Key Management Service",
-                  },
-
-                  {
-                    "Cost($)": 2.86,
-
-                    "Service Name": "AWS DataSync",
-                  },
-
-                  {
-                    "Cost($)": 2.31,
-
-                    "Service Name": "Amazon DynamoDB",
-                  },
-
-                  {
-                    "Cost($)": 0.85,
-
-                    "Service Name": "Amazon API Gateway",
-                  },
-
-                  {
-                    "Cost($)": 0.26,
-
-                    "Service Name": "Amazon Simple Queue Service",
-                  },
-
-                  {
-                    "Cost($)": 0.05,
-
-                    "Service Name": "Amazon EC2 Container Registry (ECR)",
-                  },
-
-                  {
-                    "Cost($)": 0.02,
-
-                    "Service Name": "AWS Config",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Simple Notification Service",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS Glue",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS Secrets Manager",
-                  },
-                ],
-
-                "Asia Pacific (Singapore)": [
-                  {
-                    "Cost($)": 5988.89,
-
-                    "Service Name": "Total",
-                  },
-
-                  {
-                    "Cost($)": 3512.83,
-
-                    "Service Name": "Amazon Elastic Compute Cloud",
-                  },
-
-                  {
-                    "Cost($)": 988.94,
-
-                    "Service Name": "Amazon EC2 Container Service",
-                  },
-
-                  {
-                    "Cost($)": 726.27,
-
-                    "Service Name": "Amazon Relational Database Service",
-                  },
-
-                  {
-                    "Cost($)": 366.79,
-
-                    "Service Name": "Amazon Simple Storage Service",
-                  },
-
-                  {
-                    "Cost($)": 151.2,
-
-                    "Service Name": "Amazon Virtual Private Cloud",
-                  },
-
-                  {
-                    "Cost($)": 120.84,
-
-                    "Service Name": "AWS Lambda",
-                  },
-
-                  {
-                    "Cost($)": 52.2,
-
-                    "Service Name": "Amazon AppStream",
-                  },
-
-                  {
-                    "Cost($)": 21.61,
-
-                    "Service Name": "AmazonCloudWatch",
-                  },
-
-                  {
-                    "Cost($)": 17.28,
-
-                    "Service Name": "AWS Directory Service",
-                  },
-
-                  {
-                    "Cost($)": 15.36,
-
-                    "Service Name": "Amazon EC2 Container Registry (ECR)",
-                  },
-
-                  {
-                    "Cost($)": 13.39,
-
-                    "Service Name": "Amazon DynamoDB",
-                  },
-
-                  {
-                    "Cost($)": 1.06,
-
-                    "Service Name": "AWS CloudTrail",
-                  },
-
-                  {
-                    "Cost($)": 0.59,
-
-                    "Service Name": "AWS Key Management Service",
-                  },
-
-                  {
-                    "Cost($)": 0.41,
-
-                    "Service Name": "Amazon API Gateway",
-                  },
-
-                  {
-                    "Cost($)": 0.08,
-
-                    "Service Name": "AWS Config",
-                  },
-
-                  {
-                    "Cost($)": 0.04,
-
-                    "Service Name": "AWS IoT",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon SimpleDB",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Simple Notification Service",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Simple Queue Service",
-                  },
-                ],
-
-                Any: [
-                  {
-                    "Cost($)": 16597.55,
-
-                    "Service Name": "Total",
-                  },
-
-                  {
-                    "Cost($)": 14569.38,
-
-                    "Service Name": "AWS Support (Business)",
-                  },
-
-                  {
-                    "Cost($)": 1869.72,
-
-                    "Service Name": "AWS Support (Developer)",
-                  },
-
-                  {
-                    "Cost($)": 58.06,
-
-                    "Service Name": "Amazon Route 53",
-                  },
-
-                  {
-                    "Cost($)": 44.67,
-
-                    "Service Name": "AWS WAF",
-                  },
-
-                  {
-                    "Cost($)": 34.92,
-
-                    "Service Name": "AmazonCloudWatch",
-                  },
-
-                  {
-                    "Cost($)": 10.45,
-
-                    "Service Name": "Amazon QuickSight",
-                  },
-
-                  {
-                    "Cost($)": 10.35,
-
-                    "Service Name": "AWS Budgets",
-                  },
-                ],
-
-                "US East (N. Virginia)": [
-                  {
-                    "Cost($)": 37663.63,
-
-                    "Service Name": "Total",
-                  },
-
-                  {
-                    "Cost($)": 30734.68,
-
-                    "Service Name": "Amazon Elastic Compute Cloud",
-                  },
-
-                  {
-                    "Cost($)": 1913.12,
-
-                    "Service Name": "Amazon DynamoDB",
-                  },
-
-                  {
-                    "Cost($)": 752.86,
-
-                    "Service Name": "Amazon ElastiCache",
-                  },
-
-                  {
-                    "Cost($)": 694.18,
-
-                    "Service Name": "Amazon Relational Database Service",
-                  },
-
-                  {
-                    "Cost($)": 690.7,
-
-                    "Service Name": "AmazonCloudWatch",
-                  },
-
-                  {
-                    "Cost($)": 526.53,
-
-                    "Service Name": "Amazon Elasticsearch Service",
-                  },
-
-                  {
-                    "Cost($)": 457.07,
-
-                    "Service Name": "Amazon Virtual Private Cloud",
-                  },
-
-                  {
-                    "Cost($)": 408.74,
-
-                    "Service Name": "Amazon Elastic File System",
-                  },
-
-                  {
-                    "Cost($)": 371.95,
-
-                    "Service Name": "Amazon Elastic MapReduce",
-                  },
-
-                  {
-                    "Cost($)": 307.7,
-
-                    "Service Name": "Amazon WorkSpaces",
-                  },
-
-                  {
-                    "Cost($)": 171.79,
-
-                    "Service Name": "Amazon Simple Storage Service",
-                  },
-
-                  {
-                    "Cost($)": 164.35,
-
-                    "Service Name": "AWS CloudTrail",
-                  },
-
-                  {
-                    "Cost($)": 95.97,
-
-                    "Service Name": "Amazon Simple Email Service",
-                  },
-
-                  {
-                    "Cost($)": 73.34,
-
-                    "Service Name": "Amazon GuardDuty",
-                  },
-
-                  {
-                    "Cost($)": 73.32,
-
-                    "Service Name":
-                      "Amazon Elastic Container Service for Kubernetes",
-                  },
-
-                  {
-                    "Cost($)": 64.09,
-
-                    "Service Name": "AWS Lambda",
-                  },
-
-                  {
-                    "Cost($)": 43.16,
-
-                    "Service Name": "AWS Directory Service",
-                  },
-
-                  {
-                    "Cost($)": 33.21,
-
-                    "Service Name": "AWS Config",
-                  },
-
-                  {
-                    "Cost($)": 23.01,
-
-                    "Service Name": "Amazon Simple Queue Service",
-                  },
-
-                  {
-                    "Cost($)": 17.18,
-
-                    "Service Name": "AWS WAF",
-                  },
-
-                  {
-                    "Cost($)": 10,
-
-                    "Service Name": "AWS Service Catalog",
-                  },
-
-                  {
-                    "Cost($)": 9.72,
-
-                    "Service Name": "Amazon Kinesis",
-                  },
-
-                  {
-                    "Cost($)": 7.26,
-
-                    "Service Name": "Amazon WorkDocs",
-                  },
-
-                  {
-                    "Cost($)": 6.41,
-
-                    "Service Name": "Amazon Kinesis Firehose",
-                  },
-
-                  {
-                    "Cost($)": 3.82,
-
-                    "Service Name": "AWS Key Management Service",
-                  },
-
-                  {
-                    "Cost($)": 2.91,
-
-                    "Service Name": "Amazon Comprehend",
-                  },
-
-                  {
-                    "Cost($)": 2.16,
-
-                    "Service Name": "AWS Elemental MediaLive",
-                  },
-
-                  {
-                    "Cost($)": 1.16,
-
-                    "Service Name": "AWS Data Pipeline",
-                  },
-
-                  {
-                    "Cost($)": 1,
-
-                    "Service Name": "Amazon EC2 Container Registry (ECR)",
-                  },
-
-                  {
-                    "Cost($)": 0.92,
-
-                    "Service Name": "Amazon Simple Notification Service",
-                  },
-
-                  {
-                    "Cost($)": 0.5,
-
-                    "Service Name": "Amazon Transcribe",
-                  },
-
-                  {
-                    "Cost($)": 0.4,
-
-                    "Service Name": "Amazon Lex",
-                  },
-
-                  {
-                    "Cost($)": 0.12,
-
-                    "Service Name": "AWS Secrets Manager",
-                  },
-
-                  {
-                    "Cost($)": 0.09,
-
-                    "Service Name": "AWS Glue",
-                  },
-
-                  {
-                    "Cost($)": 0.07,
-
-                    "Service Name": "Amazon API Gateway",
-                  },
-
-                  {
-                    "Cost($)": 0.07,
-
-                    "Service Name": "AWS Systems Manager",
-                  },
-
-                  {
-                    "Cost($)": 0.05,
-
-                    "Service Name": "Amazon Glacier",
-                  },
-
-                  {
-                    "Cost($)": 0.02,
-
-                    "Service Name": "Amazon Polly",
-                  },
-
-                  {
-                    "Cost($)": 0.01,
-
-                    "Service Name": "AWS Elemental MediaStore",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon SimpleDB",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon EC2 Container Service",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Cognito",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "AWS IoT",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Inspector",
-                  },
-                ],
-
-                "EU (Frankfurt)": [
-                  {
-                    "Cost($)": 783.7,
-
-                    "Service Name": "Total",
-                  },
-
-                  {
-                    "Cost($)": 727.73,
-
-                    "Service Name": "Amazon Elastic Compute Cloud",
-                  },
-
-                  {
-                    "Cost($)": 15.98,
-
-                    "Service Name": "Amazon Virtual Private Cloud",
-                  },
-
-                  {
-                    "Cost($)": 9.77,
-
-                    "Service Name": "Amazon Simple Storage Service",
-                  },
-
-                  {
-                    "Cost($)": 8.62,
-
-                    "Service Name": "AmazonCloudWatch",
-                  },
-
-                  {
-                    "Cost($)": 7.36,
-
-                    "Service Name": "AWS Lambda",
-                  },
-
-                  {
-                    "Cost($)": 5.34,
-
-                    "Service Name": "Amazon Relational Database Service",
-                  },
-
-                  {
-                    "Cost($)": 4.32,
-
-                    "Service Name": "AWS Elemental MediaLive",
-                  },
-
-                  {
-                    "Cost($)": 3.89,
-
-                    "Service Name": "Amazon Kinesis",
-                  },
-
-                  {
-                    "Cost($)": 0.58,
-
-                    "Service Name": "AWS Key Management Service",
-                  },
-
-                  {
-                    "Cost($)": 0.09,
-
-                    "Service Name": "AWS CloudTrail",
-                  },
-
-                  {
-                    "Cost($)": 0.02,
-
-                    "Service Name": "Amazon ElastiCache",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon DynamoDB",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Simple Notification Service",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Simple Queue Service",
-                  },
-                ],
-
-                "Middle East": [
-                  {
-                    "Cost($)": 0.43,
-
-                    "Service Name": "Total",
-                  },
-
-                  {
-                    "Cost($)": 0.43,
-
-                    "Service Name": "Amazon CloudFront",
-                  },
-                ],
-
-                "US West (Oregon)": [
-                  {
-                    "Cost($)": 5804.75,
-
-                    "Service Name": "Total",
-                  },
-
-                  {
-                    "Cost($)": 2068.81,
-
-                    "Service Name": "Amazon Elastic Compute Cloud",
-                  },
-
-                  {
-                    "Cost($)": 1410.5,
-
-                    "Service Name": "Amazon Relational Database Service",
-                  },
-
-                  {
-                    "Cost($)": 1264.08,
-
-                    "Service Name": "Amazon DynamoDB",
-                  },
-
-                  {
-                    "Cost($)": 374.87,
-
-                    "Service Name": "Amazon Simple Storage Service",
-                  },
-
-                  {
-                    "Cost($)": 142.56,
-
-                    "Service Name": "Amazon Simple Queue Service",
-                  },
-
-                  {
-                    "Cost($)": 108,
-
-                    "Service Name": "Amazon Redshift",
-                  },
-
-                  {
-                    "Cost($)": 103.97,
-
-                    "Service Name": "AmazonCloudWatch",
-                  },
-
-                  {
-                    "Cost($)": 87.37,
-
-                    "Service Name": "Amazon Elasticsearch Service",
-                  },
-
-                  {
-                    "Cost($)": 60.5,
-
-                    "Service Name": "Amazon GuardDuty",
-                  },
-
-                  {
-                    "Cost($)": 34.3,
-
-                    "Service Name": "Amazon Simple Email Service",
-                  },
-
-                  {
-                    "Cost($)": 33.75,
-
-                    "Service Name": "Amazon ElastiCache",
-                  },
-
-                  {
-                    "Cost($)": 32,
-
-                    "Service Name": "AWS Secrets Manager",
-                  },
-
-                  {
-                    "Cost($)": 25,
-
-                    "Service Name": "Amazon WorkSpaces",
-                  },
-
-                  {
-                    "Cost($)": 13.43,
-
-                    "Service Name": "AWS Lambda",
-                  },
-
-                  {
-                    "Cost($)": 10.8,
-
-                    "Service Name": "Amazon Virtual Private Cloud",
-                  },
-
-                  {
-                    "Cost($)": 10.8,
-
-                    "Service Name": "AWS Directory Service",
-                  },
-
-                  {
-                    "Cost($)": 10.5,
-
-                    "Service Name": "Amazon Inspector",
-                  },
-
-                  {
-                    "Cost($)": 5.52,
-
-                    "Service Name": "AWS WAF",
-                  },
-
-                  {
-                    "Cost($)": 3.86,
-
-                    "Service Name": "AWS Key Management Service",
-                  },
-
-                  {
-                    "Cost($)": 2.03,
-
-                    "Service Name": "AWS Data Pipeline",
-                  },
-
-                  {
-                    "Cost($)": 1.53,
-
-                    "Service Name": "AWS Glue",
-                  },
-
-                  {
-                    "Cost($)": 0.36,
-
-                    "Service Name": "AWS CloudTrail",
-                  },
-
-                  {
-                    "Cost($)": 0.18,
-
-                    "Service Name": "Amazon EC2 Container Registry (ECR)",
-                  },
-
-                  {
-                    "Cost($)": 0.03,
-
-                    "Service Name": "AWS IoT",
-                  },
-
-                  {
-                    "Cost($)": 0.01,
-
-                    "Service Name": "AWS Config",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon SimpleDB",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon WorkDocs",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Polly",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Elastic File System",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Elastic Transcoder",
-                  },
-
-                  {
-                    "Cost($)": 0,
-
-                    "Service Name": "Amazon Simple Notification Service",
-                  },
-                ],
-
-                "Asia Pacific": [
-                  {
-                    "Cost($)": 16.5,
-
-                    "Service Name": "Total",
-                  },
-
-                  {
-                    "Cost($)": 16.5,
-
-                    "Service Name": "Amazon CloudFront",
-                  },
-                ],
+                "y": [
+                  "Service"
+                ]
               },
-
-              tableCurrencySymbolToShow: [
-                "Any",
-
-                "Asia Pacific",
-
-                "Asia Pacific (Hong Kong)",
-
-                "Asia Pacific (Mumbai)",
-
-                "Asia Pacific (Seoul)",
-
-                "Asia Pacific (Singapore)",
-
-                "Asia Pacific (Sydney)",
-
-                "Asia Pacific (Tokyo)",
-
-                "Australia",
-
-                "Canada",
-
-                "Canada (Central)",
-
-                "EU (Frankfurt)",
-
-                "EU (Ireland)",
-
-                "EU (London)",
-
-                "EU (Paris)",
-
-                "EU (Stockholm)",
-
-                "Europe",
-
-                "India",
-
-                "Japan",
-
-                "Middle East",
-
-                "Middle East (Bahrain)",
-
-                "Miscellaneous",
-
-                "South Africa",
-
-                "South America",
-
-                "South America (Sao Paulo)",
-
-                "US East (N. Virginia)",
-
-                "US East (Ohio)",
-
-                "US West (N. California)",
-
-                "US West (Oregon)",
-
-                "United States",
-
-                "Total",
+              "currencySymbol": "$",
+              "tableKeys": [
+                "Service",
+                "Cost($)"
               ],
-
-              tableKeys: [
-                "Service Name",
-
-                "Miscellaneous",
-
-                "US East (N. Virginia)",
-
-                "Asia Pacific (Mumbai)",
-
-                "Any",
-
-                "EU (Ireland)",
-
-                "Asia Pacific (Singapore)",
-
-                "US West (Oregon)",
-
-                "US East (Ohio)",
-
-                "EU (Paris)",
-
-                "US West (N. California)",
-
-                "EU (Frankfurt)",
-
-                "Asia Pacific (Tokyo)",
-
-                "India",
-
-                "United States",
-
-                "Europe",
-
-                "EU (London)",
-
-                "Asia Pacific",
-
-                "South America",
-
-                "Australia",
-
-                "Asia Pacific (Sydney)",
-
-                "South America (Sao Paulo)",
-
-                "Canada",
-
-                "South Africa",
-
-                "Japan",
-
-                "EU (Stockholm)",
-
-                "Asia Pacific (Seoul)",
-
-                "Middle East",
-
-                "Canada (Central)",
-
-                "Middle East (Bahrain)",
-
-                "Asia Pacific (Hong Kong)",
-
-                "Total",
+              "table": [
+                {
+                  "Cost($)": 97575.07,
+                  "Service": "Amazon Elastic Compute Cloud"
+                },
+                {
+                  "Cost($)": 23614.87,
+                  "Service": "Amazon Relational Database Service"
+                },
+                {
+                  "Cost($)": 10512.99,
+                  "Service": "Savings Plans"
+                },
+                {
+                  "Cost($)": 8537.32,
+                  "Service": "Amazon Simple Storage Service"
+                },
+                {
+                  "Cost($)": 7058.43,
+                  "Service": "Elastic Load Balancing"
+                },
+                {
+                  "Cost($)": 6130.73,
+                  "Service": "Amazon CloudFront"
+                },
+                {
+                  "Cost($)": 5920.45,
+                  "Service": "Amazon DynamoDB"
+                },
+                {
+                  "Cost($)": 4769.86,
+                  "Service": "AmazonCloudWatch"
+                },
+                {
+                  "Cost($)": 3935.84,
+                  "Service": "Amazon ElastiCache"
+                },
+                {
+                  "Cost($)": 3691.29,
+                  "Service": "Amazon Redshift"
+                },
+                {
+                  "Cost($)": 3520.81,
+                  "Service": "Amazon API Gateway"
+                },
+                {
+                  "Cost($)": 3086.55,
+                  "Service": "Amazon Elastic File System"
+                },
+                {
+                  "Cost($)": 2724.41,
+                  "Service": "AWS CloudTrail"
+                },
+                {
+                  "Cost($)": 2629.66,
+                  "Service": "Amazon Virtual Private Cloud"
+                },
+                {
+                  "Cost($)": 2310.8,
+                  "Service": "AWS Shield"
+                },
+                {
+                  "Cost($)": 1469.6,
+                  "Service": "AWS Key Management Service"
+                },
+                {
+                  "Cost($)": 1355.09,
+                  "Service": "AWS Network Firewall"
+                },
+                {
+                  "Cost($)": 1313.1,
+                  "Service": "Amazon SageMaker"
+                },
+                {
+                  "Cost($)": 946.92,
+                  "Service": "AWS WAF"
+                },
+                {
+                  "Cost($)": 915.56,
+                  "Service": "Amazon Managed Streaming for Apache Kafka"
+                },
+                {
+                  "Cost($)": 795.01,
+                  "Service": "Amazon Elastic Container Service"
+                },
+                {
+                  "Cost($)": 754.51,
+                  "Service": "Savings Plans for AWS Machine Learning"
+                },
+                {
+                  "Cost($)": 734.91,
+                  "Service": "AWS Database Migration Service"
+                },
+                {
+                  "Cost($)": 732.05,
+                  "Service": "Amazon Elastic Container Service for Kubernetes"
+                },
+                {
+                  "Cost($)": 642.03,
+                  "Service": "AWS Glue"
+                },
+                {
+                  "Cost($)": 594.25,
+                  "Service": "Amazon GuardDuty"
+                },
+                {
+                  "Cost($)": 588.05,
+                  "Service": "Amazon OpenSearch Service"
+                },
+                {
+                  "Cost($)": 584.33,
+                  "Service": "AWS Lambda"
+                },
+                {
+                  "Cost($)": 574.09,
+                  "Service": "Amazon Kinesis Firehose"
+                },
+                {
+                  "Cost($)": 434.54,
+                  "Service": "Amazon WorkSpaces"
+                },
+                {
+                  "Cost($)": 392.83,
+                  "Service": "Amazon MQ"
+                },
+                {
+                  "Cost($)": 321.85,
+                  "Service": "Amazon QuickSight"
+                },
+                {
+                  "Cost($)": 314.05,
+                  "Service": "AWS Directory Service"
+                },
+                {
+                  "Cost($)": 283.96,
+                  "Service": "Amazon DocumentDB (with MongoDB compatibility)"
+                },
+                {
+                  "Cost($)": 278.03,
+                  "Service": "AWS Config"
+                },
+                {
+                  "Cost($)": 243,
+                  "Service": "AWS Transfer Family"
+                },
+                {
+                  "Cost($)": 222.4,
+                  "Service": "Amazon CloudSearch"
+                },
+                {
+                  "Cost($)": 216.99,
+                  "Service": "AWS X-Ray"
+                },
+                {
+                  "Cost($)": 208.78,
+                  "Service": "Amazon Managed Workflows for Apache Airflow"
+                },
+                {
+                  "Cost($)": 202.86,
+                  "Service": "Palo Alto Networks VM-300 Bundle 2"
+                },
+                {
+                  "Cost($)": 191.87,
+                  "Service": "Amazon Neptune"
+                },
+                {
+                  "Cost($)": 157.97,
+                  "Service": "AWS Device Farm"
+                },
+                {
+                  "Cost($)": 141.06,
+                  "Service": "Amazon Lightsail"
+                },
+                {
+                  "Cost($)": 127.69,
+                  "Service": "Amazon Simple Email Service"
+                },
+                {
+                  "Cost($)": 119.46,
+                  "Service": "Amazon Polly"
+                },
+                {
+                  "Cost($)": 119.42,
+                  "Service": "AWS Storage Gateway"
+                },
+                {
+                  "Cost($)": 115.64,
+                  "Service": "Amazon Simple Queue Service"
+                },
+                {
+                  "Cost($)": 109.12,
+                  "Service": "Amazon FSx"
+                },
+                {
+                  "Cost($)": 106.65,
+                  "Service": "Amazon EC2 Container Registry (ECR)"
+                },
+                {
+                  "Cost($)": 105.57,
+                  "Service": "DynamoDB Accelerator (DAX)"
+                },
+                {
+                  "Cost($)": 93.42,
+                  "Service": "AWS Global Accelerator"
+                },
+                {
+                  "Cost($)": 90.84,
+                  "Service": "Oracle Enterprise Linux 7.2  supported by Navisite"
+                },
+                {
+                  "Cost($)": 79.2,
+                  "Service": "Red Hat Enterprise Linux (RHEL) 7.9 with support by ProComputers"
+                },
+                {
+                  "Cost($)": 75.41,
+                  "Service": "SUSE Linux Enterprise Server for SAP Applications 15 SP3"
+                },
+                {
+                  "Cost($)": 70.22,
+                  "Service": "Amazon AppStream"
+                },
+                {
+                  "Cost($)": 69.47,
+                  "Service": "AmazonWorkMail"
+                },
+                {
+                  "Cost($)": 68.74,
+                  "Service": "SUSE Linux Enterprise Server for SAP Applications 12 SP3"
+                },
+                {
+                  "Cost($)": 67.8,
+                  "Service": "OpenVPN Access Server (10 Connected Devices)"
+                },
+                {
+                  "Cost($)": 64.25,
+                  "Service": "Amazon Kinesis"
+                },
+                {
+                  "Cost($)": 63.81,
+                  "Service": "AWS DataSync"
+                },
+                {
+                  "Cost($)": 61.63,
+                  "Service": "AWS Secrets Manager"
+                },
+                {
+                  "Cost($)": 60.94,
+                  "Service": "AWS Security Hub"
+                },
+                {
+                  "Cost($)": 58.65,
+                  "Service": "Heimdall Proxy Standard Edition"
+                },
+                {
+                  "Cost($)": 58.01,
+                  "Service": "Amazon Route 53"
+                },
+                {
+                  "Cost($)": 53.8,
+                  "Service": "OpenVPN Access Server (25 Connected Devices)"
+                },
+                {
+                  "Cost($)": 53.51,
+                  "Service": "CloudEndure Disaster Recovery to AWS"
+                },
+                {
+                  "Cost($)": 41.93,
+                  "Service": "Trend Micro Cloud One"
+                },
+                {
+                  "Cost($)": 40.93,
+                  "Service": "AWS Amplify"
+                },
+                {
+                  "Cost($)": 27.25,
+                  "Service": "Amazon Athena"
+                },
+                {
+                  "Cost($)": 24.81,
+                  "Service": "AWS Direct Connect"
+                },
+                {
+                  "Cost($)": 23,
+                  "Service": "Amazon Registrar"
+                },
+                {
+                  "Cost($)": 21.89,
+                  "Service": "Amazon WorkDocs"
+                },
+                {
+                  "Cost($)": 19.28,
+                  "Service": "AWS Backup"
+                },
+                {
+                  "Cost($)": 19.04,
+                  "Service": "Plesk WordPress Edition PREMIUM, Website & WordPress Hosting"
+                },
+                {
+                  "Cost($)": 16.98,
+                  "Service": "Amazon Simple Notification Service"
+                },
+                {
+                  "Cost($)": 16.22,
+                  "Service": "CIS Amazon Linux 2 Benchmark - Level 2"
+                },
+                {
+                  "Cost($)": 15.76,
+                  "Service": "Amazon Inspector"
+                },
+                {
+                  "Cost($)": 15.37,
+                  "Service": "CloudEndure Disaster Recovery to AWS"
+                },
+                {
+                  "Cost($)": 14.7,
+                  "Service": "Debian 10 (Debian Buster) with Support by Supported Images"
+                },
+                {
+                  "Cost($)": 13.4,
+                  "Service": "Ubuntu 20 (Ubuntu 20.04 LTS) with Support by Supported Images"
+                },
+                {
+                  "Cost($)": 12.8,
+                  "Service": "Amazon Textract"
+                },
+                {
+                  "Cost($)": 11.2,
+                  "Service": "CIS Microsoft Windows Server 2019 Benchmark - Level 2"
+                },
+                {
+                  "Cost($)": 10.49,
+                  "Service": "Plesk Obsidian on Ubuntu - WordPress & Website Hosting Environment"
+                },
+                {
+                  "Cost($)": 10.29,
+                  "Service": "Plesk Onyx on Windows 2012 R2 WordPress & Website Hosting Environment"
+                },
+                {
+                  "Cost($)": 9.52,
+                  "Service": "WordPress Protected with End to End AppCalcium Security Solution"
+                },
+                {
+                  "Cost($)": 9.48,
+                  "Service": "Fortinet Managed Rules for AWS WAF Classic - Complete OWASP Top 10"
+                },
+                {
+                  "Cost($)": 9.45,
+                  "Service": "Amazon Inspector"
+                },
+                {
+                  "Cost($)": 9.38,
+                  "Service": "OpenVPN Access Server (5 Connected Devices)"
+                },
+                {
+                  "Cost($)": 9,
+                  "Service": "AWS CodePipeline"
+                },
+                {
+                  "Cost($)": 8.16,
+                  "Service": "Amazon Fraud Detector"
+                },
+                {
+                  "Cost($)": 8,
+                  "Service": "AWS CodeCommit"
+                },
+                {
+                  "Cost($)": 7.56,
+                  "Service": "Amazon HealthLake"
+                },
+                {
+                  "Cost($)": 3.96,
+                  "Service": "Amazon Rekognition"
+                },
+                {
+                  "Cost($)": 3.61,
+                  "Service": "Amazon Glacier"
+                },
+                {
+                  "Cost($)": 3.47,
+                  "Service": "CodeBuild"
+                },
+                {
+                  "Cost($)": 3.02,
+                  "Service": "AWS Cost Explorer"
+                },
+                {
+                  "Cost($)": 2.94,
+                  "Service": "Debian GNU/Linux 9 (Stretch) with support by Frontline"
+                },
+                {
+                  "Cost($)": 2.43,
+                  "Service": "AWS Data Pipeline"
+                },
+                {
+                  "Cost($)": 1.62,
+                  "Service": "AWS Step Functions"
+                },
+                {
+                  "Cost($)": 1.4,
+                  "Service": "Amazon Macie"
+                },
+                {
+                  "Cost($)": 1.36,
+                  "Service": "Amazon Pinpoint"
+                },
+                {
+                  "Cost($)": 1.13,
+                  "Service": "AWS IoT"
+                },
+                {
+                  "Cost($)": 0.51,
+                  "Service": "AWS Systems Manager"
+                },
+                {
+                  "Cost($)": 0.45,
+                  "Service": "AWS AppSync"
+                },
+                {
+                  "Cost($)": 0.4,
+                  "Service": "CentOS 7 w/Support by SupportedImages"
+                },
+                {
+                  "Cost($)": 0.35,
+                  "Service": "Red Hat Enterprise Linux (RHEL) 8 with LVM"
+                },
+                {
+                  "Cost($)": 0.13,
+                  "Service": "Amazon AppFlow"
+                },
+                {
+                  "Cost($)": 0.1,
+                  "Service": "CloudWatch Events"
+                },
+                {
+                  "Cost($)": 0.07,
+                  "Service": "Amazon Detective"
+                },
+                {
+                  "Cost($)": 0.05,
+                  "Service": "Amazon Keyspaces (for Apache Cassandra)"
+                },
+                {
+                  "Cost($)": 0.05,
+                  "Service": "AWS Compute Optimizer"
+                },
+                {
+                  "Cost($)": 0.01,
+                  "Service": "AWS Budgets"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Amazon Comprehend"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Amazon Lex"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Amazon SimpleDB"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AWS Data Exchange"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Amazon Kinesis Analytics"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Amazon Simple Workflow Service"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AWS CodeArtifact"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Amazon Timestream"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AWS CloudShell"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "VM-Series Next-Generation Firewall Bundle 2"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Amazon Elastic Container Registry Public"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Contact Center Telecommunications (service sold by AMCS, LLC) "
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Amazon Elastic Transcoder"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Amazon Cognito"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AWS Greengrass"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AWS Service Catalog"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "Amazon Sumerian"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AmazonSWF"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AmazonTimestream"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AWSCodeArtifact"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AmazonSimpleDB"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AmazonStates"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AmazonKinesisAnalytics"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AWSSystemsManager"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AmazonLex"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AWSEvents"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "comprehend"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AmazonMCS"
+                },
+                {
+                  "Cost($)": 0,
+                  "Service": "AmazonDetective"
+                },
+                {
+                  "Cost($)": -0.03,
+                  "Service": "AWSAppSync"
+                },
+                {
+                  "Cost($)": -0.03,
+                  "Service": "AmazonPinpoint"
+                },
+                {
+                  "Cost($)": -0.06,
+                  "Service": "AmazonWorkMail"
+                },
+                {
+                  "Cost($)": -0.08,
+                  "Service": "AWSIoT"
+                },
+                {
+                  "Cost($)": -0.1,
+                  "Service": "AmazonMacie"
+                },
+                {
+                  "Cost($)": -0.17,
+                  "Service": "datapipeline"
+                },
+                {
+                  "Cost($)": -0.19,
+                  "Service": "AWSCostExplorer"
+                },
+                {
+                  "Cost($)": -0.26,
+                  "Service": "AmazonGlacier"
+                },
+                {
+                  "Cost($)": -0.28,
+                  "Service": "AmazonRekognition"
+                },
+                {
+                  "Cost($)": -0.29,
+                  "Service": "CodeBuild"
+                },
+                {
+                  "Cost($)": -0.3,
+                  "Service": "AmazonAthena"
+                },
+                {
+                  "Cost($)": -0.52,
+                  "Service": "AmazonWorkDocs"
+                },
+                {
+                  "Cost($)": -0.53,
+                  "Service": "AmazonHealthLake"
+                },
+                {
+                  "Cost($)": -0.55,
+                  "Service": "AmazonTextract"
+                },
+                {
+                  "Cost($)": -0.56,
+                  "Service": "AWSCodePipeline"
+                },
+                {
+                  "Cost($)": -0.57,
+                  "Service": "AWSCodeCommit"
+                },
+                {
+                  "Cost($)": -0.6,
+                  "Service": "AmazonCloudSearch"
+                },
+                {
+                  "Cost($)": -1.1,
+                  "Service": "AmazonInspectorV2"
+                },
+                {
+                  "Cost($)": -1.14,
+                  "Service": "AmazonSNS"
+                },
+                {
+                  "Cost($)": -1.27,
+                  "Service": "AWSBackup"
+                },
+                {
+                  "Cost($)": -1.41,
+                  "Service": "AmazonLightsail"
+                },
+                {
+                  "Cost($)": -1.63,
+                  "Service": "AmazonFSx"
+                },
+                {
+                  "Cost($)": -2.17,
+                  "Service": "AWSSecurityHub"
+                },
+                {
+                  "Cost($)": -2.17,
+                  "Service": "AWSDirectConnect"
+                },
+                {
+                  "Cost($)": -2.44,
+                  "Service": "AmazonRoute53"
+                },
+                {
+                  "Cost($)": -2.54,
+                  "Service": "AmazonAppStream"
+                },
+                {
+                  "Cost($)": -2.86,
+                  "Service": "AWSAmplify"
+                },
+                {
+                  "Cost($)": -4.18,
+                  "Service": "AWSSecretsManager"
+                },
+                {
+                  "Cost($)": -5.04,
+                  "Service": "AmazonKinesis"
+                },
+                {
+                  "Cost($)": -5.39,
+                  "Service": "AWSGlue"
+                },
+                {
+                  "Cost($)": -6.52,
+                  "Service": "AWSStorageGateway"
+                },
+                {
+                  "Cost($)": -7.37,
+                  "Service": "AWSQueueService"
+                },
+                {
+                  "Cost($)": -8.36,
+                  "Service": "AmazonPolly"
+                },
+                {
+                  "Cost($)": -8.98,
+                  "Service": "AWSGlobalAccelerator"
+                },
+                {
+                  "Cost($)": -9.17,
+                  "Service": "AmazonECR"
+                },
+                {
+                  "Cost($)": -10.21,
+                  "Service": "AWSDataSync"
+                },
+                {
+                  "Cost($)": -10.24,
+                  "Service": "AmazonSES"
+                },
+                {
+                  "Cost($)": -11.28,
+                  "Service": "AWSDirectoryService"
+                },
+                {
+                  "Cost($)": -15.19,
+                  "Service": "AWSXRay"
+                },
+                {
+                  "Cost($)": -18.96,
+                  "Service": "AWSDeviceFarm"
+                },
+                {
+                  "Cost($)": -19.06,
+                  "Service": "AWSTransfer"
+                },
+                {
+                  "Cost($)": -19.55,
+                  "Service": "AmazonES"
+                },
+                {
+                  "Cost($)": -23.02,
+                  "Service": "AmazonNeptune"
+                },
+                {
+                  "Cost($)": -28.28,
+                  "Service": "AWSConfig"
+                },
+                {
+                  "Cost($)": -34.08,
+                  "Service": "AmazonDocDB"
+                },
+                {
+                  "Cost($)": -34.08,
+                  "Service": "AmazonQuickSight"
+                },
+                {
+                  "Cost($)": -35.86,
+                  "Service": "AmazonEKS"
+                },
+                {
+                  "Cost($)": -40.16,
+                  "Service": "AmazonKinesisFirehose"
+                },
+                {
+                  "Cost($)": -40.58,
+                  "Service": "AWSLambda"
+                },
+                {
+                  "Cost($)": -43.51,
+                  "Service": "AmazonMQ"
+                },
+                {
+                  "Cost($)": -44.22,
+                  "Service": "AmazonGuardDuty"
+                },
+                {
+                  "Cost($)": -52.76,
+                  "Service": "AmazonECS"
+                },
+                {
+                  "Cost($)": -62.13,
+                  "Service": "awswaf"
+                },
+                {
+                  "Cost($)": -62.26,
+                  "Service": "AmazonWorkSpaces"
+                },
+                {
+                  "Cost($)": -70.98,
+                  "Service": "AmazonMSK"
+                },
+                {
+                  "Cost($)": -93.81,
+                  "Service": "AmazonSageMaker"
+                },
+                {
+                  "Cost($)": -100.53,
+                  "Service": "awskms"
+                },
+                {
+                  "Cost($)": -103.85,
+                  "Service": "AWSDatabaseMigrationSvc"
+                },
+                {
+                  "Cost($)": -117.91,
+                  "Service": "AmazonVPC"
+                },
+                {
+                  "Cost($)": -161.76,
+                  "Service": "AWSShield"
+                },
+                {
+                  "Cost($)": -191.37,
+                  "Service": "AWSCloudTrail"
+                },
+                {
+                  "Cost($)": -197.52,
+                  "Service": "AWSNetworkFirewall"
+                },
+                {
+                  "Cost($)": -246.97,
+                  "Service": "AmazonApiGateway"
+                },
+                {
+                  "Cost($)": -263.02,
+                  "Service": "AmazonRedshift"
+                },
+                {
+                  "Cost($)": -287.45,
+                  "Service": "AmazonElastiCache"
+                },
+                {
+                  "Cost($)": -298.79,
+                  "Service": "AmazonCloudWatch"
+                },
+                {
+                  "Cost($)": -315.34,
+                  "Service": "AmazonDynamoDB"
+                },
+                {
+                  "Cost($)": -397.54,
+                  "Service": "AmazonS3"
+                },
+                {
+                  "Cost($)": -482.47,
+                  "Service": "AmazonEFS"
+                },
+                {
+                  "Cost($)": -520.83,
+                  "Service": "AWSELB"
+                },
+                {
+                  "Cost($)": -647.27,
+                  "Service": "ComputeSavingsPlans"
+                },
+                {
+                  "Cost($)": -1055.12,
+                  "Service": "AmazonCloudFront"
+                },
+                {
+                  "Cost($)": -1767.26,
+                  "Service": "AmazonRDS"
+                },
+                {
+                  "Cost($)": -7243.92,
+                  "Service": "AmazonEC2"
+                }
               ],
-
-              currencySymbol: "$",
-
-              pdfColumnSequence: ["Service Name", "Cost($)"],
-
-              roundOff: 2,
-
-              pdfTableName: [
-                "Miscellaneous",
-
-                "US East (N. Virginia)",
-
-                "Asia Pacific (Mumbai)",
-
-                "Any",
-
-                "EU (Ireland)",
-
-                "Asia Pacific (Singapore)",
-
-                "US West (Oregon)",
-
-                "US East (Ohio)",
-
-                "EU (Paris)",
-
-                "US West (N. California)",
-
-                "EU (Frankfurt)",
-
-                "Asia Pacific (Tokyo)",
-
-                "India",
-
-                "United States",
-
-                "Europe",
-
-                "EU (London)",
-
-                "Asia Pacific",
-
-                "South America",
-
-                "Australia",
-
-                "Asia Pacific (Sydney)",
-
-                "South America (Sao Paulo)",
-
-                "Canada",
-
-                "South Africa",
-
-                "Japan",
-
-                "EU (Stockholm)",
-
-                "Asia Pacific (Seoul)",
-
-                "Middle East",
-
-                "Canada (Central)",
-
-                "Middle East (Bahrain)",
-
-                "Asia Pacific (Hong Kong)",
-              ],
-
-              table: [
-                {
-                  "South America": 5.66,
-
-                  Miscellaneous: 103219.88,
-
-                  "United States": 72.12,
-
-                  "US East (Ohio)": 4720.11,
-
-                  "Asia Pacific (Singapore)": 5988.89,
-
-                  Any: 16597.55,
-
-                  "US East (N. Virginia)": 37663.63,
-
-                  "EU (Frankfurt)": 783.7,
-
-                  "Middle East": 0.43,
-
-                  "US West (Oregon)": 5804.75,
-
-                  "Asia Pacific": 16.5,
-
-                  "Canada (Central)": 0.37,
-
-                  "EU (Stockholm)": 0.71,
-
-                  "Asia Pacific (Mumbai)": 20235.02,
-
-                  "Asia Pacific (Hong Kong)": 0,
-
-                  "South America (Sao Paulo)": 3.2,
-
-                  "US West (N. California)": 817.12,
-
-                  "EU (Paris)": 1674.55,
-
-                  Europe: 51.55,
-
-                  Japan: 0.89,
-
-                  "Service Name": "Total",
-
-                  India: 190.73,
-
-                  Canada: 2.29,
-
-                  "Asia Pacific (Tokyo)": 647.03,
-
-                  Total: 212434.33,
-
-                  "South Africa": 0.98,
-
-                  "Asia Pacific (Sydney)": 4.35,
-
-                  Australia: 5.46,
-
-                  "Asia Pacific (Seoul)": 0.55,
-
-                  "EU (London)": 17.4,
-
-                  "Middle East (Bahrain)": 0.17,
-
-                  "EU (Ireland)": 13908.74,
-                },
-
-                {
-                  Miscellaneous: 221.16,
-
-                  Any: 14569.38,
-
-                  "Service Name": "AWS Support (Business)",
-
-                  Total: 14790.54,
-                },
-
-                {
-                  Miscellaneous: 181.8,
-
-                  Any: 1869.72,
-
-                  "Service Name": "AWS Support (Developer)",
-
-                  Total: 2051.52,
-                },
-
-                {
-                  Miscellaneous: 72.17,
-
-                  Any: 58.06,
-
-                  "Service Name": "Amazon Route 53",
-
-                  Total: 130.42,
-
-                  "EU (Ireland)": 0.19,
-                },
-
-                {
-                  "US West (Oregon)": 5.52,
-
-                  Miscellaneous: 46.85,
-
-                  Total: 143.57,
-
-                  Any: 44.67,
-
-                  "US East (N. Virginia)": 17.18,
-
-                  "Service Name": "AWS WAF",
-
-                  "EU (Ireland)": 29.35,
-                },
-
-                {
-                  "Asia Pacific (Hong Kong)": 0,
-
-                  "South America (Sao Paulo)": 0.12,
-
-                  "US West (N. California)": 4.6,
-
-                  Miscellaneous: 267.87,
-
-                  "EU (Paris)": 5.64,
-
-                  "US East (Ohio)": 93.04,
-
-                  "Asia Pacific (Singapore)": 21.61,
-
-                  Any: 34.92,
-
-                  "US East (N. Virginia)": 690.7,
-
-                  "Service Name": "AmazonCloudWatch",
-
-                  "EU (Frankfurt)": 8.62,
-
-                  "US West (Oregon)": 103.97,
-
-                  "Asia Pacific (Tokyo)": 1.83,
-
-                  "Canada (Central)": 0.28,
-
-                  Total: 2838.54,
-
-                  "EU (Stockholm)": 0.62,
-
-                  "Asia Pacific (Sydney)": 1.55,
-
-                  "Asia Pacific (Seoul)": 0.24,
-
-                  "EU (London)": 8.72,
-
-                  "Asia Pacific (Mumbai)": 218.05,
-
-                  "EU (Ireland)": 1376.16,
-                },
-
-                {
-                  Miscellaneous: 0,
-
-                  Any: 10.45,
-
-                  "Service Name": "Amazon QuickSight",
-
-                  Total: 10.45,
-                },
-
-                {
-                  Miscellaneous: 4.7,
-
-                  Any: 10.35,
-
-                  "Service Name": "AWS Budgets",
-
-                  Total: 15.05,
-                },
-
-                {
-                  "South America": 5.66,
-
-                  Miscellaneous: 3869.3,
-
-                  "United States": 72.12,
-
-                  Europe: 51.55,
-
-                  Japan: 0.89,
-
-                  "Service Name": "Amazon CloudFront",
-
-                  India: 190.73,
-
-                  "Middle East": 0.43,
-
-                  Canada: 2.29,
-
-                  "Asia Pacific": 16.5,
-
-                  Total: 4215.91,
-
-                  "South Africa": 0.98,
-
-                  Australia: 5.46,
-                },
-
-                {
-                  "Asia Pacific (Hong Kong)": 0,
-
-                  "South America (Sao Paulo)": 0,
-
-                  "US West (N. California)": 0,
-
-                  Miscellaneous: 0.48,
-
-                  "EU (Paris)": 0,
-
-                  "US East (Ohio)": 0,
-
-                  "Asia Pacific (Singapore)": 0,
-
-                  "US East (N. Virginia)": 0.92,
-
-                  "Service Name": "Amazon Simple Notification Service",
-
-                  "EU (Frankfurt)": 0,
-
-                  "US West (Oregon)": 0,
-
-                  "Asia Pacific (Tokyo)": 0,
-
-                  "Canada (Central)": 0,
-
-                  Total: 1.48,
-
-                  "EU (Stockholm)": 0,
-
-                  "Asia Pacific (Sydney)": 0,
-
-                  "Asia Pacific (Seoul)": 0,
-
-                  "EU (London)": 0,
-
-                  "Asia Pacific (Mumbai)": 0.02,
-
-                  "EU (Ireland)": 0.06,
-                },
-
-                {
-                  "Asia Pacific (Hong Kong)": 0,
-
-                  "South America (Sao Paulo)": 0,
-
-                  "US West (N. California)": 0.29,
-
-                  Miscellaneous: 1.05,
-
-                  "EU (Paris)": 0,
-
-                  "US East (Ohio)": 2.91,
-
-                  "Asia Pacific (Singapore)": 0.59,
-
-                  "US East (N. Virginia)": 3.82,
-
-                  "Service Name": "AWS Key Management Service",
-
-                  "EU (Frankfurt)": 0.58,
-
-                  "US West (Oregon)": 3.86,
-
-                  "Asia Pacific (Tokyo)": 0.58,
-
-                  "Canada (Central)": 0,
-
-                  Total: 16.92,
-
-                  "EU (Stockholm)": 0,
-
-                  "Asia Pacific (Sydney)": 0,
-
-                  "Asia Pacific (Seoul)": 0,
-
-                  "EU (London)": 0,
-
-                  "Asia Pacific (Mumbai)": 0.94,
-
-                  "EU (Ireland)": 2.3,
-                },
-
-                {
-                  "Asia Pacific (Hong Kong)": 0,
-
-                  "South America (Sao Paulo)": 0,
-
-                  "US West (N. California)": 0,
-
-                  Miscellaneous: 9.74,
-
-                  "EU (Paris)": 0,
-
-                  "US East (Ohio)": 0.26,
-
-                  "Asia Pacific (Singapore)": 0,
-
-                  "US East (N. Virginia)": 23.01,
-
-                  "Service Name": "Amazon Simple Queue Service",
-
-                  "EU (Frankfurt)": 0,
-
-                  "US West (Oregon)": 142.56,
-
-                  "Asia Pacific (Tokyo)": 0,
-
-                  "Canada (Central)": 0,
-
-                  Total: 203.88,
-
-                  "EU (Stockholm)": 0,
-
-                  "Asia Pacific (Sydney)": 0,
-
-                  "Asia Pacific (Seoul)": 0,
-
-                  "EU (London)": 0.01,
-
-                  "Asia Pacific (Mumbai)": 28.3,
-
-                  "EU (Ireland)": 0,
-                },
-
-                {
-                  "US West (N. California)": 495.54,
-
-                  Miscellaneous: 87491.81,
-
-                  "EU (Paris)": 1621.65,
-
-                  "US East (Ohio)": 3975.69,
-
-                  "Asia Pacific (Singapore)": 3512.83,
-
-                  "US East (N. Virginia)": 30734.68,
-
-                  "Service Name": "Amazon Elastic Compute Cloud",
-
-                  "EU (Frankfurt)": 727.73,
-
-                  "US West (Oregon)": 2068.81,
-
-                  "Asia Pacific (Tokyo)": 341.16,
-
-                  Total: 158191.92,
-
-                  "Asia Pacific (Sydney)": 1.39,
-
-                  "Middle East (Bahrain)": 0.17,
-
-                  "Asia Pacific (Mumbai)": 17751.61,
-
-                  "EU (Ireland)": 9468.85,
-                },
-
-                {
-                  "US West (N. California)": 180.88,
-
-                  "US West (Oregon)": 1410.5,
-
-                  Miscellaneous: 7143.67,
-
-                  "Asia Pacific (Tokyo)": 0.01,
-
-                  "US East (Ohio)": 221.43,
-
-                  Total: 12589.13,
-
-                  "Asia Pacific (Singapore)": 726.27,
-
-                  "US East (N. Virginia)": 694.18,
-
-                  "Asia Pacific (Mumbai)": 1004.01,
-
-                  "Service Name": "Amazon Relational Database Service",
-
-                  "EU (Frankfurt)": 5.34,
-
-                  "EU (Ireland)": 1202.84,
-                },
-
-                {
-                  "South America (Sao Paulo)": 2.98,
-
-                  Miscellaneous: 10.83,
-
-                  "US East (Ohio)": 22.69,
-
-                  "Asia Pacific (Singapore)": 120.84,
-
-                  "US East (N. Virginia)": 64.09,
-
-                  "Service Name": "AWS Lambda",
-
-                  "EU (Frankfurt)": 7.36,
-
-                  "US West (Oregon)": 13.43,
-
-                  "Asia Pacific (Tokyo)": 248.86,
-
-                  Total: 1127.8,
-
-                  "Asia Pacific (Sydney)": 1.09,
-
-                  "Asia Pacific (Seoul)": 0.21,
-
-                  "EU (London)": 8.53,
-
-                  "Asia Pacific (Mumbai)": 625.57,
-
-                  "EU (Ireland)": 1.32,
-                },
-              ],
+              "totalCost": 188726.97
             },
-
-            dataList: [],
-
-            otherException: [],
-
-            page: "home",
-
-            insightText: "Cost By Region",
+            "dataList": [],
+            "noCredentialsDB": [],
+            "insufficientPermission": [],
+            "invalidCredentials": [],
+            "generalException": [],
+            "resourceTags": [],
+            "self": "https://s3.ap-south-1.amazonaws.com/centilytics.config.ap-south-1/request-response-logs/response/centilytics_india_root/dev_cent%40centilytics.com/8202ee5a-3cec-4c81-a19b-dd25e753b751.json?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCmFwLXNvdXRoLTEiSDBGAiEA5YHcwxxHxOszK7IeE%2B7VcpIr93UwJqiV8KfgIp2UFnACIQCLTI7ZXcKI0Es%2B4z5F%2B9CKwwPGWfBjPsXD9QScfoy%2FpyquAgiw%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAQaDDA2MDA4NzIxODE0NSIMwXdmAmQl3gBlCfrPKoICCeRnGuwsOwQ7UnP7zyNqOGo%2Fs%2F%2Fy%2BR8VTFPTmy8qJJ3tbaS24kNKVJa9ZnlGWLi%2FHJ%2Ff76vR3h5K437wVVyTx4b0DiNXIUVSlfi4bgPHSjd2J9vYfkiiiatT9FrN%2FMGksiJTF%2Ft%2BEH5bgUR%2B9j2f0h1p85C5NtRBbp2OBMK3s9SBXiZ3t3cXf2o3T2Y60QNF%2FXxB4YtazYP29UwPOdESXZOBH1TxE5tIkbGXvA0%2FzglWrwDw5iHajkSAUYhcastaPp8g0ZKkIsDOtnrTLQ7WJaB%2FQv3cIEqKFCnKz2jRuaTpRjARPqpCXKdCOcWFm0UwXJnsO8LysT3%2BjoiSiyYosbuCMN%2B5qZUGOpkBqaBfRoSmn%2FAQNQ2T0B6R39JZlfzFDvhAjKjKKvWeNspq4GnKhVwOPRkczFmabYb6E3uKfuLRATNZYCqN%2Fp2Ct9GSWJfKV54MrJ3aJGJAb3Lv0iLta%2BvpDYsbYX4PRWv9dIsSw02YUmgDHWKAsaRV1zE65tTYSePkxGeP5ryN6B3XVgJ3UloCBa7Q17ryVEzdSjEwbG7h9JVM&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220615T223732Z&X-Amz-SignedHeaders=host&X-Amz-Expires=172800&X-Amz-Credential=ASIAQ37L2F7QXF3YXKIF%2F20220615%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=a0576dfe3d6c5b1a39be41c265e297d6f863e2b692f5f63ae6b400c3a3fe101f",
+            "next": {
+              "baseUrl": null,
+              "inputKeys": null
+            },
+            "previous": {
+              "baseUrl": null,
+              "inputKeys": null
+            },
+            "cloud": "aws",
+            "invocationType": null,
+            "module": "costmonitoring",
+            "page": "home",
+            "insight": "cost-by-service",
+            "insightText": "Cost of AWS Services",
+            "referS3UrlBydefault": false,
+            "basicLimit": 3,
+            "filterLimit": null,
+            "insightState": "PREMIUM",
+            "autoRenew": false,
+            "otherException": [],
+            "restrictedFilters": [],
+            "message": null
           },
-
-          portletType: "REGIONALV2",
-        },
+          "portletType": "PIEV2"
+        }
       ],
-
-      moduleText: "Cost Monitoring",
-    },
+      "moduleText": "Cost Monitoring",
+      "startDate": "01 February 2021",
+      "endDate": "07 February 2021"
+    }
   },
-
-  startDate: "01 August 2019",
+  "startDate": "01 February 2021",
+  "endDate": "07 February 2021",
+  "bucketName": "centilytics.config.ap-south-1",
+  "region": "ap-south-1",
+  "reportKey": "temp-dir-lambda/centilytics_india_root/stagingphase2@centilytics.com/reportName/reportName.pdf"
 };
 
 module.exports = dummyData;
