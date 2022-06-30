@@ -1,17 +1,17 @@
 {
-  "name": "openfaas-function",
-  "version": "1.0.0",
-  "description": "OpenFaaS Function",
-  "main": "handler.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
-  },
-  "keywords": [],
-  "author": "OpenFaaS Ltd",
-  "license": "MIT",
-  "dependencies": {
-    "aws-sdk": "2.441.0",
-    "axios": "0.16.2",
-    "easy-pdf-merge": "0.2.2"
-  }
+	"name": "openfaas-function",
+	"version": "1.0.0",
+	"description": "OpenFaaS Function",
+	"main": "handler.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 0"
+	},
+	"keywords": [],
+	"author": "OpenFaaS Ltd",
+	"license": "MIT",
+	"dependencies": {
+		"aws-sdk": "2.441.0",
+		"axios": "0.16.2",
+		"easy-pdf-merge": "0.2.2"
+	}
 }

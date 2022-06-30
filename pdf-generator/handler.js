@@ -32,10 +32,22 @@ let tempPath = "/tmp/";
 
 module.exports = async (event, callback) => {
   event = dummyData;
-
-  console.log("INPUT", event);
-
   let dataResponse = null;
+  // let BASE_URL= 'https://api-prod-v1.centilytics.com/aws/costmonitoring/auth/home/cost-by-time';
+  // let JWT= 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkZXZfY2VudEBjZW50aWx5dGljcy5jb20iLCJuYmYiOjE2NTU4NzY3MjUsImlvdF90b3BpYyI6ImExZDI5ZDUzLTI5MzItNGVkOC1hMjFiLTg4ZjNhZTk1YWY2ZSIsIkRPTUFJTl9JRCI6ImNlbnRpbHl0aWNzIiwiYWN0aXZlX3ZpZXciOiIwNDExNDE3Yi1kZTk1LTQyNTAtYTkxMS0yZDE1OTAxMWI5Y2QiLCJpc3MiOiJDRU5USUxZVElDUyIsIlRFTkFOVF9JRCI6ImU5MjE5NDY4LWY1ZjUtNDVlMS1hYzY2LTcwOGE1NDU0NWIxZiIsImV4cCI6MTY1NTkwMTkyNSwiaWF0IjoxNjU1ODc2NzI1fQ.9acGVQP_7n0RMjuyIP7HZRa7Kl90_U_RF3wkCUB911aa6mkGPKdm0JYfiM_bknjScPS2sDHGafBNNrKqwsSo7g';
+  // let body = {"resourceTags":["Name|Shubham","Name|Abhinav-Openfaas-Dont-Delete"],"by":"days","timezone":"UTC","services":[],"roundOff":2,"accountIds":["343873837875"],"groupingForResourceTags":[],"regions":["Asia Pacific (Mumbai)"],"costType":"unblended","priceType":"listPrice","currency":{"id":"USD","label":"United States Dollar (USD)","symbol":"$","exchangeRate":1,"defaultCurrencyValue":false},"dateRange":{"startDateTime":"2022-06-01 00:00:00","endDateTime":"2022-06-21 23:59:59"}};
+  // const config = {
+  //   headers: {
+  //       "Content-type": "application/json",
+  //       "authorizationToken": `Bearer ${JWT}`,
+  //   },
+  // };    
+  // await axios.post(`${BASE_URL}`, body, config).then((response)=>{
+  //   event['modules']['aws/costmonitoring']['insights'][0]['data'] = JSON.parse(JSON.stringify(response.data));
+  //   dataResponse = JSON.parse(JSON.stringify(event));
+  //   console.log(dataResponse['modules']['aws/costmonitoring']['insights'][0]);
+
+  // })
 
   if (event["s3Url"]) {
     // hit api
